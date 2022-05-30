@@ -10,7 +10,7 @@ jobs:
     matrix:
         java: [ '11', '14', '17' ]
         os: [ubuntu-latest, windows-latest]
-    name: Java ${{ matrix.Java }} sample
+    name: Java ${{ matrix.Java }} in ${{ matrix.os }} sample
     steps:
       - uses: stCarolas/setup-maven@v4.3
         with:
