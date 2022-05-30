@@ -5,9 +5,9 @@ on: push
 
 jobs:
   game-of-life-test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
+    runs-on: ${{ matrix.os }}
+    fail-fast: false
+    matrix:
         java: [ '11', '14', '17' ]
         os: [ubuntu-latest, windows-latest]
     name: Java ${{ matrix.Java }} sample
