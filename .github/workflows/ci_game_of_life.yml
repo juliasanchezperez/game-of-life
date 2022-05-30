@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         java: [ '11', '14', '17' ]
+        os: [ubuntu-latest, windows-latest]
     name: Java ${{ matrix.Java }} sample
     steps:
       - uses: stCarolas/setup-maven@v4.3
