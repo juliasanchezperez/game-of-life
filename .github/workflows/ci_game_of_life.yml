@@ -6,14 +6,18 @@ on: push
 jobs:
   game-of-life-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ '11', '14', '17' ]
+    name: Java ${{ matrix.Java }} sample
     steps:
       - uses: stCarolas/setup-maven@v4.3
         with:
           maven-version: 3.5.4
       - uses: actions/setup-java@v3
         with:
-          distribution: 'temurin'
-          java-version: '14'
+          distribution: '<distribution>'
+          java-version: ${{ matrix.java }}
       - name: Java version
         run: java -version
       - name: Maven version
