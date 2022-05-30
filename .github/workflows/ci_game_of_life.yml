@@ -15,7 +15,7 @@ jobs:
           distribution: 'adopt'
           java-version: '8'
       - name: Java version
-        run: java --version
+        run: java -version
       - name: Maven version
         run: mvn --version
       - name: Checkout repo
